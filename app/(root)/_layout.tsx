@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function NotFound() {
+const HomeLayout = () => {
   return (
     <View>
-      <Text>NotFound</Text>
+      <Text>HomeLayout</Text>
     </View>
   )
 }
+
+export default HomeLayout

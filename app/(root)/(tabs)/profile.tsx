@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function NotFound() {
+const Profile = () => {
   return (
     <View>
-      <Text>NotFound</Text>
+      <Text>Profile</Text>
     </View>
   )
 }
+
+export default Profile

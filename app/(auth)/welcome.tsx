@@ -1,10 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function NotFound() {
+const WelcomeScreen = () => {
   return (
     <View>
-      <Text>NotFound</Text>
+      <Text>WelcomeScreen</Text>
     </View>
   )
 }
+
+export default WelcomeScreen
