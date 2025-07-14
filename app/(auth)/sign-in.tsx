@@ -6,37 +6,38 @@ import { icons, images } from "@/constants";
 import InputField from "@/components/input-field";
 import CustomButton from "@/components/custom-button";
 import OAuth from "@/components/oauth";
+import { useSignIn } from "@clerk/clerk-expo";
 
 const SignIn = () => {
-  // const { signIn, setActive, isLoaded } = useSignIn();
+  const { signIn, setActive, isLoaded } = useSignIn();
 
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
 
-  // const onSignInPress = useCallback(async () => {
-  //   if (!isLoaded) return;
+  const onSignInPress = useCallback(async () => {
+    if (!isLoaded) return;
 
-  //   try {
-  //     const signInAttempt = await signIn.create({
-  //       identifier: form.email,
-  //       password: form.password,
-  //     });
+    try {
+      const signInAttempt = await signIn.create({
+        identifier: form.email,
+        password: form.password,
+      });
 
-  //     if (signInAttempt.status === "complete") {
-  //       await setActive({ session: signInAttempt.createdSessionId });
-  //       router.replace("/(root)/(tabs)/home");
-  //     } else {
-  //       // See https://clerk.com/docs/custom-flows/error-handling for more info on error handling
-  //       console.log(JSON.stringify(signInAttempt, null, 2));
-  //       Alert.alert("Error", "Log in failed. Please try again.");
-  //     }
-  //   } catch (err: any) {
-  //     console.log(JSON.stringify(err, null, 2));
-  //     Alert.alert("Error", err.errors[0].longMessage);
-  //   }
-  // }, [isLoaded, form]);
+      if (signInAttempt.status === "complete") {
+        await setActive({ session: signInAttempt.createdSessionId });
+        router.replace("//(root)/(tabs)/home");
+      } else {
+        // See https://clerk.com/docs/custom-flows/error-handling for more info on error handling
+        console.log(JSON.stringify(signInAttempt, null, 2));
+        Alert.alert("Error", "Log in failed. Please try again.");
+      }
+    } catch (err: any) {
+      console.log(JSON.stringify(err, null, 2));
+      Alert.alert("Error", err.errors[0].longMessage);
+    }
+  }, [isLoaded, form]);
 
   return (
     <ScrollView className="flex-1 bg-white">
@@ -70,7 +71,7 @@ const SignIn = () => {
 
           <CustomButton
             title="Sign In"
-            // onPress={onSignInPress}
+            onPress={onSignInPress}
             className="mt-6"
           />
 
