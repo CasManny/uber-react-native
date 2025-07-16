@@ -4,18 +4,18 @@ import { icons } from "@/constants";
 import CustomButton from "./custom-button";
 
 const OAuth = () => {
-  //   const { startOAuthFlow } = useOAuth({ strategy: "oauth_google" });
+    // const { startOAuthFlow } = useSSO({ strategy: "oauth_google" });
 
-  //   const handleGoogleSignIn = async () => {
-  //     const result = await googleOAuth(startOAuthFlow);
+    // const handleGoogleSignIn = async () => {
+    //   const result = await googleOAuth(startOAuthFlow);
 
-  //     if (result.code === "session_exists") {
-  //       Alert.alert("Success", "Session exists. Redirecting to home screen.");
-  //       router.replace("/(root)/(tabs)/home");
-  //     }
+    //   if (result.code === "session_exists") {
+    //     Alert.alert("Success", "Session exists. Redirecting to home screen.");
+    //     router.replace("/(root)/(tabs)/home");
+    //   }
 
-  //     Alert.alert(result.success ? "Success" : "Error", result.message);
-  //   };
+    //   Alert.alert(result.success ? "Success" : "Error", result.message);
+    // };
 
   return (
     <View>
